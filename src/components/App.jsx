@@ -15,31 +15,31 @@ class App extends React.Component {
     ],
     filter: '',
   };
-  
-  componentDidMount() {
-    const contacts = JSON.parse(localStorage.getItem("contacts"));
-    if (contacts?.length) {
-this.setState({ contacts });
-    }
-    
-}
-//  componentDidMount() {
-//     const serializedState = localStorage.getItem('contacts');
-//     const contacts = serializedState ? JSON.parse(serializedState) : [];
-//     this.setState({ contacts });
-//   }
-  componentDidUpdate(prevProps, prevState) {
-    const { contacts } = this.state;
-    if (prevState.contacts.length !== contacts.length) {
-      localStorage.setItem("contacts", JSON.stringify(contacts))
-    }
-    
-}
-//   componentDidUpdate(prevProps, prevState) {
-//     if (this.state.contacts && this.state.contacts !== prevState.contacts) {
-//       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+
+//   componentDidMount() {
+//     const contacts = JSON.parse(localStorage.getItem("contacts"));
+//     if (contacts?.length) {
+// this.setState({ contacts });
 //     }
-//   }
+    
+// }
+ componentDidMount() {
+    const serializedState = localStorage.getItem('contacts');
+    const contacts = serializedState ? JSON.parse(serializedState) : [];
+    this.setState({ contacts });
+  }
+//   componentDidUpdate(prevProps, prevState) {
+//     const { contacts } = this.state;
+//     if (prevState.contacts.length !== contacts.length) {
+//       localStorage.setItem("contacts", JSON.stringify(contacts))
+//     }
+    
+// }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts && this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   handleAddContact = newContact => {
     this.setState(prevState => ({
