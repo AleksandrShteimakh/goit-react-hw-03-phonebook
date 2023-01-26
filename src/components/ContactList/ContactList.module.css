@@ -1,0 +1,13 @@
+.deleteButton {
+  margin-left: 20px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+.contactItem {
+  margin-bottom: 5px;
+}
+
+.contactItem:last-of-type {
+  margin-bottom: 0;
+}
