@@ -96,7 +96,7 @@ class Filter extends React.Component {
 
 Filter.propTypes = {
   onFilter: PropTypes.func.isRequired,
-  filter: PropTypes.string,
+  filter: PropTypes.string.isRequired,
 };
 
 export default Filter;
